@@ -1,5 +1,5 @@
-# Script Name	: backup_automater_services.py
-# Author			: Levis Jani
+# Script Name	  : backup_automater_services.py
+# Author			  : Levis Jani
 # Description		: This will go through and backup all the automator services workflows
 
 import shutil							# Load the library module
