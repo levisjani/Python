@@ -1,3 +1,8 @@
+# Script Name		: data1svm.py
+# Author	  : Levis Jani
+
+# Description	
+
 import matplotlib.pyplot as plt
 from sklearn import datasets
 from sklearn import svm
