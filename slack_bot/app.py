@@ -17,6 +17,15 @@ def channel_info(channel_id):
     if channel_info:
         return channel_info['channel']
     return None  
+    
+def send_message(channel_id, message):
+    slack_client.api_call(
+        "chat.postMessage",
+        channel=channel_id,
+        text=message,
+        username='pythonbot',
+        icon_emoji=':robot_face:'
+    )    
 
 if __name__ == '__main__':
     channels = list_channels()
@@ -28,4 +37,4 @@ if __name__ == '__main__':
             if detailed_info:
                 print(detailed_info['latest']['text'])
     else:
-        print("Unable to authenticate.")
+        print("Unable to authenticate")
