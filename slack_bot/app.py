@@ -31,10 +31,15 @@ if __name__ == '__main__':
     channels = list_channels()
     if channels:
         print("Channels: ")
-        for c in channels:
-            print(c['name'] + " (" + c['id'] + ")")
-            detailed_info = channel_info(c['id'])
+        for channel in channels:
+            print(channel['name'] + " (" + channel['id'] + ")")
+            detailed_info = channel_info(channel['id'])
             if detailed_info:
+                print('Latest text from ' + channel['name'] + ":")
                 print(detailed_info['latest']['text'])
+            if channel['name'] == 'general':
+                send_message(channel['id'], "Hello " +
+                             channel['name'] + "! It worked!")
+        print('-----')
     else:
-        print("Unable to authenticate")
+        print("Unable to authenticate.")
